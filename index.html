@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2d5366">
+
+  <title>Código de Ética e Conduta — Flexcampo</title>
+
+  <style>
+    :root {
+      --azul: #2d5366;
+      --azul-escuro: #203d4c;
+      --azul-claro: #90a9c3;
+      --creme: #fffdf1;
+      --bege: #f5efe6;
+      --bege-escuro: #e8ddd0;
+      --texto: #2c2c2c;
+      --texto-claro: #675e53;
+      --borda: #e2d8ca;
+      --verde: #3f4d32;
+      --vermelho: #a93222;
+      --sombra: 0 10px 30px rgba(45, 83, 102, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bege), var(--bege-escuro));
+      line-height: 1.65;
+    }
+
+    header {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 50px 20px;
+      background:
+        linear-gradient(rgba(32, 61, 76, .9), rgba(45, 83, 102, .88)),
+        radial-gradient(circle at top right, #90a9c3, transparent 35%);
+    }
+
+    header h1 {
+      max-width: 950px;
+      margin: 0 auto 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 8vw, 88px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: clamp(17px, 2vw, 23px);
+      color: #f8f2e8;
+    }
+
+    .empresa {
+      margin-top: 30px;
+      font-size: 14px;
+      letter-spacing: .5px;
+      color: #dce8ef;
+    }
+
+    .barra {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      background: rgba(255, 253, 241, .96);
+      border-bottom: 1px solid var(--borda);
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+      backdrop-filter: blur(8px);
+    }
+
+    .barra a,
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: white;
+      background: var(--azul);
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .barra a:hover,
+    button:hover {
+      background: var(--azul-escuro);
+      transform: translateY(-2px);
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 35px auto 70px;
+    }
+
+    .controles {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .controles input {
+      flex: 1;
+      min-width: 240px;
+      padding: 13px 16px;
+      border: 1px solid var(--borda);
+      border-radius: 999px;
+      background: var(--creme);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .controles input:focus {
+      border-color: var(--azul);
+      box-shadow: 0 0 0 3px rgba(45, 83, 102, .15);
+    }
+
+    .card {
+      margin-bottom: 22px;
+      padding: 28px;
+      background: var(--creme);
+      border: 1px solid rgba(226, 216, 202, .9);
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+    }
+
+    .card h2 {
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      color: var(--azul-escuro);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 4vw, 34px);
+      border-bottom: 2px solid var(--azul-claro);
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-top: 26px;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 10px 0;
+    }
+
+    .card ul,
+    .card ol {
+      padding-left: 24px;
+    }
+
+    .card li {
+      margin: 7px 0;
+    }
+
+    .destaque {
+      padding: 18px 20px;
+      margin: 18px 0;
+      border-left: 5px solid var(--azul);
+      background: #edf3f5;
+      border-radius: 8px;
+    }
+
+    .valores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .valor {
+      padding: 18px;
+      text-align: center;
+      color: white;
+      background: var(--azul);
+      border-radius: 14px;
+    }
+
+    .valor strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .empresa-box {
+      padding: 18px;
+      margin: 14px 0;
+      background: #f6f0e7;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+    }
+
+    .empresa-box strong {
+      color: var(--azul-escuro);
+    }
+
+    .proibido {
+      border-left-color: var(--vermelho);
+      background: #fff0ed;
+    }
+
+    .obrigatorio {
+      border-left-color: var(--verde);
+      background: #eef5e9;
+    }
+
+    .assinatura {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .linha {
+      padding-top: 45px;
+      text-align: center;
+      border-top: 1px solid #555;
+    }
+
+    footer {
+      padding: 35px 20px;
+      text-align: center;
+      color: white;
+      background: var(--azul);
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    .oculto {
+      display: none !important;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .barra,
+      .controles,
+      .nao-imprimir {
+        display: none !important;
+      }
+
+      header {
+        min-height: 280px;
+        color: black;
+        background: white;
+        border-bottom: 3px solid var(--azul);
+      }
+
+      header h1,
+      header p,
+      header .empresa {
+        color: black;
+      }
+
+      .container {
+        width: 100%;
+        margin: 0;
+      }
+
+      .card {
+        box-shadow: none;
+        break-inside: avoid;
+        border: 0;
+        padding: 18px 0;
+      }
+
+      footer {
+        color: black;
+        background: white;
+        border-top: 1px solid #aaa;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .card {
+        padding: 21px 17px;
+      }
+
+      .assinatura {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .barra {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="inicio">
+    <div>
+      <h1>Código de Ética e Conduta</h1>
+      <p>Integridade, respeito, transparência e responsabilidade em todas as nossas relações.</p>
+
+      <div class="empresa">
+        FLEXCAMPO — COMÉRCIO, SERVIÇOS E SOLUÇÕES
+      </div>
+    </div>
+  </header>
+
+  <nav class="barra" aria-label="Navegação do documento">
+    <a href="#apresentacao">Apresentação</a>
+    <a href="#principios">Princípios</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#colaboradores">Colaboradores</a>
+    <a href="#integridade">Integridade</a>
+    <a href="#seguranca">Segurança</a>
+    <a href="#denuncias">Denúncias</a>
+    <button onclick="window.print()">Imprimir / PDF</button>
+  </nav>
+
+  <main class="container">
+
+    <div class="controles nao-imprimir">
+      <input
+        id="busca"
+        type="search"
+        placeholder="Pesquisar neste Código de Ética..."
+        oninput="buscarTexto()"
+        aria-label="Pesquisar no Código de Ética"
+      >
+      <button onclick="expandirTudo()">Expandir tudo</button>
+      <button onclick="recolherTudo()">Recolher tudo</button>
+    </div>
+
+    <section class="card" id="apresentacao">
+      <h2>Apresentação</h2>
+
+      <p>
+        Este Código de Ética e Conduta estabelece os princípios, valores e padrões
+        de comportamento esperados nas atividades da Flexcampo e de suas empresas
+        relacionadas.
+      </p>
+
+      <p>
+        O documento aplica-se às atividades comerciais e de serviços desenvolvidas
+        pelas empresas, incluindo o comércio de produtos de borracha, ferragens,
+        ferramentas, materiais elétricos, hidráulicos, tintas, artigos de uso
+        pessoal e doméstico, equipamentos e suprimentos de informática, peças,
+        acessórios e serviços de reparação e manutenção.
+      </p>
+
+      <div class="destaque">
+        <strong>Importante:</strong>
+        este Código não substitui a legislação, as normas técnicas, os contratos,
+        os procedimentos internos ou as orientações de saúde e segurança. Em caso
+        de conflito, deverá prevalecer a legislação aplicável.
+      </div>
+
+      <div class="empresa-box">
+        <strong>Empresa 1:</strong><br>
+        Flexcar Comércio de Borrachas e Serviços Ltda.<br>
+        Nome fantasia: Flexcampo Comércio de Borrachas Ltda.<br>
+        CNPJ: 13.233.956/0001-85
+      </div>
+
+      <div class="empresa-box">
+        <strong>Empresa 2:</strong><br>
+        Flexcampo Comércio de Ferragem e Serviços Ltda.<br>
+        Nome fantasia: Flexcampo<br>
+        CNPJ: 25.117.337/0001-04
+      </div>
+
+      <p>
+        A identificação cadastral e as atividades econômicas devem ser confirmadas
+        nos documentos oficiais atualizados de cada empresa.
+      </p>
+    </section>
+
+    <section class="card" id="objetivo">
+      <h2>1. Objetivo e Abrangência</h2>
+
+      <p>Este Código tem como objetivos:</p>
+
+      <ul>
+        <li>orientar decisões e comportamentos profissionais;</li>
+        <li>promover relações baseadas em respeito, honestidade e transparência;</li>
+        <li>prevenir fraudes, corrupção e conflitos de interesse;</li>
+        <li>proteger clientes, colaboradores, fornecedores e parceiros;</li>
+        <li>assegurar a qualidade e a segurança dos produtos e serviços;</li>
+        <li>fortalecer a reputação e a sustentabilidade das empresas.</li>
+      </ul>
+
+      <p>
+        O Código aplica-se a sócios, administradores, gestores, empregados,
+        aprendizes, estagiários, representantes, prestadores de serviços e
+        terceiros que atuem em nome ou em benefício das empresas.
+      </p>
+    </section>
+
+    <section class="card" id="principios">
+      <h2>2. Missão, Visão, Valores e Princípios</h2>
+
+      <h3>Missão</h3>
+      <p>
+        Atender clientes com soluções confiáveis em produtos, ferramentas,
+        materiais e serviços, combinando qualidade, orientação responsável,
+        respeito e eficiência.
+      </p>
+
+      <h3>Visão</h3>
+      <p>
+        Ser reconhecida pela confiança, excelência no atendimento, conduta ética
+        e responsabilidade na comercialização de produtos e na prestação de serviços.
+      </p>
+
+      <h3>Valores</h3>
+
+      <div class="valores">
+        <div class="valor"><strong>Integridade</strong>Agir corretamente, mesmo quando ninguém estiver observando.</div>
+        <div class="valor"><strong>Respeito</strong>Valorizar todas as pessoas e suas diferenças.</div>
+        <div class="valor"><strong>Transparência</strong>Comunicar informações claras e verdadeiras.</div>
+        <div class="valor"><strong>Qualidade</strong>Buscar excelência nos produtos e serviços.</div>
+        <div class="valor"><strong>Segurança</strong>Priorizar a proteção das pessoas.</div>
+        <div class="valor"><strong>Responsabilidade</strong>Cuidar dos recursos, do ambiente e da comunidade.</div>
+      </div>
+
+      <h3>Princípios fundamentais</h3>
+
+      <ul>
+        <li>agir de boa-fé e com honestidade;</li>
+        <li>cumprir as leis, normas técnicas e regras internas;</li>
+        <li>tratar todas as pessoas com respeito e igualdade;</li>
+        <li>preservar a segurança de clientes, colaboradores e terceiros;</li>
+        <li>fornecer informações verdadeiras, claras e completas;</li>
+        <li>proteger os bens, recursos, informações e a reputação das empresas;</li>
+        <li>comunicar irregularidades, riscos ou violações;</li>
+        <li>evitar situações que comprometam a imparcialidade profissional.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="clientes">
+      <h2>3. Relacionamento com Clientes e Consumidores</h2>
+
+      <p>
+        O relacionamento com clientes deve ser baseado em respeito, cordialidade,
+        clareza e solução adequada de suas necessidades.
+      </p>
+
+      <div class="destaque obrigatorio">
+        <strong>É obrigatório:</strong>
+        <ul>
+          <li>prestar atendimento educado, profissional e sem discriminação;</li>
+          <li>informar corretamente preços, prazos, garantias e condições de pagamento;</li>
+          <li>apresentar produtos compatíveis com a finalidade informada pelo cliente;</li>
+          <li>orientar sobre utilização, conservação e segurança quando necessário;</li>
+          <li>tratar reclamações com atenção e agilidade;</li>
+          <li>preservar a confidencialidade das informações dos clientes.</li>
+        </ul>
+      </div>
+
+      <div class="destaque proibido">
+        <strong>É proibido:</strong>
+        <ul>
+          <li>realizar propaganda enganosa;</li>
+          <li>omitir defeitos, limitações ou riscos conhecidos;</li>
+          <li>alterar preços ou condições sem informar o cliente;</li>
+          <li>induzir o cliente à compra de produto ou serviço desnecessário;</li>
+          <li>prometer prazo, qualidade ou resultado que não possa ser cumprido;</li>
+          <li>discriminar qualquer pessoa.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" id="produtos">
+      <h2>4. Qualidade, Produtos e Armazenamento</h2>
+
+      <p>
+        As empresas devem comercializar produtos de origem regular e compatíveis
+        com as especificações informadas ao cliente.
+      </p>
+
+      <ul>
+        <li>conferir quantidade, integridade, validade e condições das embalagens;</li>
+        <li>armazenar os produtos de acordo com suas características;</li>
+        <li>separar produtos danificados, vencidos ou impróprios;</li>
+        <li>respeitar as instruções dos fabricantes e normas técnicas;</li>
+        <li>comunicar suspeitas de falsificação, defeito ou risco;</li>
+        <li>manter estoques organizados e protegidos contra danos;</li>
+        <li>evitar a venda de produtos sem origem ou documentação adequada.</li>
+      </ul>
+
+      <p>
+        A indicação de ferramentas, materiais elétricos, hidráulicos, tintas,
+        borrachas e demais produtos deve considerar a finalidade informada, as
+        condições de uso e a competência técnica necessária.
+      </p>
+    </section>
+
+    <section class="card" id="servicos">
+      <h2>5. Serviços e Manutenção</h2>
+
+      <p>Na prestação de serviços, todos devem:</p>
+
+      <ul>
+        <li>elaborar orçamentos claros e, sempre que possível, por escrito;</li>
+        <li>informar escopo, prazo, preço, materiais, peças e garantia;</li>
+        <li>obter autorização antes de realizar serviços adicionais;</li>
+        <li>executar somente serviços necessários e autorizados;</li>
+        <li>utilizar peças e materiais adequados;</li>
+        <li>preservar os bens recebidos para reparo;</li>
+        <li>registrar a entrada e a devolução de equipamentos;</li>
+        <li>comunicar danos, riscos, atrasos ou alterações relevantes;</li>
+        <li>manter o local de trabalho organizado e seguro.</li>
+      </ul>
+
+      <div class="destaque proibido">
+        <strong>Não é permitido:</strong>
+        cobrar por serviço não realizado, substituir peças sem autorização,
+        ocultar danos preexistentes ou executar reparos desnecessários para
+        aumentar o valor da cobrança.
+      </div>
+    </section>
+
+    <section class="card" id="colaboradores">
+      <h2>6. Conduta dos Colaboradores</h2>
+
+      <p>
+        Todos têm direito a um ambiente de trabalho seguro, respeitoso e livre
+        de assédio e discriminação.
+      </p>
+
+      <h3>Condutas esperadas</h3>
+
+      <ul>
+        <li>agir com educação, profissionalismo e cooperação;</li>
+        <li>cumprir horários, responsabilidades e procedimentos;</li>
+        <li>zelar pela imagem e pelo patrimônio das empresas;</li>
+        <li>respeitar opiniões, diferenças e limites pessoais;</li>
+        <li>comunicar erros, riscos e irregularidades;</li>
+        <li>utilizar corretamente ferramentas e equipamentos.</li>
+      </ul>
+
+      <h3>Condutas não toleradas</h3>
+
+      <ul>
+        <li>assédio moral ou sexual;</li>
+        <li>ameaças, agressões ou humilhações;</li>
+        <li>discriminação ou preconceito;</li>
+        <li>retaliação contra quem comunique uma irregularidade;</li>
+        <li>trabalho sob influência de álcool ou drogas;</li>
+        <li>uso indevido de armas nas dependências da empresa.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="fornecedores">
+      <h2>7. Fornecedores e Parceiros</h2>
+
+      <p>
+        A seleção e contratação de fornecedores devem considerar critérios
+        objetivos, como qualidade, preço, prazo, regularidade, segurança,
+        capacidade de atendimento e reputação.
+      </p>
+
+      <p>É proibido:</p>
+
+      <ul>
+        <li>solicitar ou aceitar vantagens pessoais de fornecedores;</li>
+        <li>direcionar compras por interesse particular;</li>
+        <li>compartilhar informações comerciais confidenciais sem autorização;</li>
+        <li>aceitar produtos sem origem ou documentação adequada;</li>
+        <li>manter relações com empresas envolvidas em trabalho infantil ou forçado.</li>
+      </ul>
+
+      <p>
+        Fornecedores e parceiros devem cumprir a legislação trabalhista,
+        ambiental, fiscal e de segurança, além de respeitar este Código quando
+        atuarem em nome das empresas.
+      </p>
+    </section>
+
+    <section class="card" id="integridade">
+      <h2>8. Conflitos de Interesse, Brindes e Integridade</h2>
+
+      <h3>Conflitos de interesse</h3>
+
+      <p>
+        Conflito de interesse ocorre quando interesses pessoais, familiares ou
+        financeiros possam influenciar, ou parecer influenciar, uma decisão
+        profissional.
+      </p>
+
+      <p>Devem ser comunicadas à administração situações como:</p>
+
+      <ul>
+        <li>negociação com empresa de familiar ou pessoa próxima;</li>
+        <li>participação financeira em fornecedor, cliente ou concorrente;</li>
+        <li>recebimento de comissão não autorizada;</li>
+        <li>uso de informação interna para benefício próprio;</li>
+        <li>atividade externa que prejudique a imparcialidade profissional.</li>
+      </ul>
+
+      <h3>Brindes, presentes e vantagens</h3>
+
+      <p>
+        Brindes institucionais de baixo valor, sem expectativa de contrapartida,
+        podem ser aceitos quando não influenciarem decisões profissionais.
+      </p>
+
+      <p>Devem ser recusados ou comunicados à administração:</p>
+
+      <ul>
+        <li>dinheiro, cartões, empréstimos ou equivalentes;</li>
+        <li>presentes de valor elevado;</li>
+        <li>viagens, hospedagens ou entretenimento sem justificativa profissional;</li>
+        <li>benefícios oferecidos durante negociações ou contratações;</li>
+        <li>qualquer vantagem que possa influenciar uma decisão.</li>
+      </ul>
+
+      <h3>Combate à corrupção e fraudes</h3>
+
+      <p>As empresas não toleram:</p>
+
+      <ul>
+        <li>suborno ou pagamento de propina;</li>
+        <li>fraudes em vendas, compras, estoque ou caixa;</li>
+        <li>falsificação ou alteração de documentos;</li>
+        <li>apropriação ou desvio de valores e mercadorias;</li>
+        <li>pagamentos “por fora”;</li>
+        <li>manipulação de registros contábeis ou comerciais;</li>
+        <li>favorecimento indevido de clientes, fornecedores ou terceiros.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="seguranca">
+      <h2>9. Saúde, Segurança e Prevenção de Acidentes</h2>
+
+      <p>
+        A proteção da vida, da saúde e da integridade física deve estar acima de
+        qualquer urgência comercial.
+      </p>
+
+      <ul>
+        <li>cumprir as normas de saúde e segurança;</li>
+        <li>utilizar os equipamentos de proteção fornecidos;</li>
+        <li>comunicar acidentes e condições perigosas;</li>
+        <li>manter corredores e saídas desobstruídos;</li>
+        <li>armazenar produtos de forma estável e adequada;</li>
+        <li>observar riscos de corte, queda, peso, eletricidade e produtos químicos;</li>
+        <li>utilizar ferramentas conforme suas instruções;</li>
+        <li>não remover proteções ou dispositivos de segurança;</li>
+        <li>participar dos treinamentos aplicáveis.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="informacoes">
+      <h2>10. Proteção de Informações e Dados Pessoais</h2>
+
+      <p>
+        Informações de clientes, fornecedores, colaboradores e empresas devem ser
+        utilizadas somente para finalidades legítimas e profissionais.
+      </p>
+
+      <p>Devem ser protegidos:</p>
+
+      <ul>
+        <li>dados pessoais;</li>
+        <li>documentos fiscais e cadastrais;</li>
+        <li>preços, margens e condições comerciais;</li>
+        <li>senhas e acessos;</li>
+        <li>informações de serviços e reparos;</li>
+        <li>dados bancários e informações estratégicas.</li>
+      </ul>
+
+      <p>
+        É proibido compartilhar, copiar ou utilizar informações para benefício
+        próprio ou de terceiros sem autorização. Perdas de documentos, envio
+        indevido de dados ou acessos não autorizados devem ser comunicados
+        imediatamente.
+      </p>
+    </section>
+
+    <section class="card" id="ambiental">
+      <h2>11. Responsabilidade Ambiental</h2>
+
+      <p>
+        As empresas devem reduzir desperdícios e promover o armazenamento,
+        manuseio e descarte responsável de produtos e resíduos.
+      </p>
+
+      <ul>
+        <li>separar resíduos recicláveis e não recicláveis;</li>
+        <li>destinar corretamente borrachas, embalagens e peças;</li>
+        <li>destinar adequadamente componentes elétricos e eletrônicos;</li>
+        <li>dar tratamento adequado a tintas, solventes e materiais contaminantes;</li>
+        <li>prevenir vazamentos e contaminações;</li>
+        <li>reduzir o consumo de água, energia, papel e materiais;</li>
+        <li>utilizar destinadores regularizados quando necessário.</li>
+      </ul>
+
+      <div class="destaque proibido">
+        Nenhum resíduo deve ser descartado em local inadequado ou de maneira que
+        cause dano ao meio ambiente ou à saúde pública.
+      </div>
+    </section>
+
+    <section class="card" id="recursos">
+      <h2>12. Uso dos Recursos da Empresa</h2>
+
+      <p>
+        Veículos, computadores, sistemas, ferramentas, estoques, equipamentos,
+        instalações e recursos financeiros devem ser utilizados de forma
+        responsável e para finalidades autorizadas.
+      </p>
+
+      <ul>
+        <li>não retirar produtos ou materiais sem registro e autorização;</li>
+        <li>não utilizar recursos para fins ilícitos;</li>
+        <li>não instalar programas não autorizados;</li>
+        <li>não danificar ou desperdiçar bens;</li>
+        <li>não realizar despesas falsas ou sem comprovação;</li>
+        <li>não utilizar sistemas para conteúdo ofensivo ou discriminatório.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="comunidade">
+      <h2>13. Relacionamento com a Comunidade</h2>
+
+      <p>
+        As empresas reconhecem sua responsabilidade perante a comunidade em que
+        atuam e devem conduzir suas atividades com respeito às pessoas, ao
+        comércio local e ao meio ambiente.
+      </p>
+
+      <p>
+        A atuação empresarial deve contribuir para relações comerciais honestas,
+        geração de oportunidades, segurança das operações e desenvolvimento
+        responsável da comunidade.
+      </p>
+    </section>
+
+    <section class="card" id="denuncias">
+      <h2>14. Comunicação de Irregularidades</h2>
+
+      <p>
+        Dúvidas, suspeitas de irregularidades ou violações deste Código devem ser
+        comunicadas à liderança, à administração ou ao canal interno indicado
+        oficialmente pelas empresas.
+      </p>
+
+      <p>A comunicação deve conter, sempre que possível:</p>
+
+      <ul>
+        <li>descrição dos fatos;</li>
+        <li>data e local da ocorrência;</li>
+        <li>pessoas envolvidas;</li>
+        <li>documentos ou evidências disponíveis;</li>
+        <li>possíveis testemunhas.</li>
+      </ul>
+
+      <div class="destaque obrigatorio">
+        <strong>Não retaliação:</strong>
+        não será admitida qualquer retaliação contra quem comunicar uma
+        preocupação de boa-fé, ainda que a apuração não confirme a irregularidade.
+      </div>
+
+      <p>
+        <strong>Canal de denúncias:</strong>
+        ________________________________________________
+      </p>
+
+      <p>
+        <strong>E-mail:</strong>
+        ________________________________________________
+      </p>
+
+      <p>
+        <strong>Telefone/WhatsApp:</strong>
+        ________________________________________________
+      </p>
+    </section>
+
+    <section class="card" id="medidas">
+      <h2>15. Descumprimento e Medidas Disciplinares</h2>
+
+      <p>
+        O descumprimento deste Código poderá resultar em medidas proporcionais à
+        gravidade do fato, à intenção, aos danos causados e ao histórico do
+        envolvido, incluindo:
+      </p>
+
+      <ol>
+        <li>orientação ou treinamento;</li>
+        <li>advertência verbal ou escrita;</li>
+        <li>suspensão;</li>
+        <li>desligamento ou rescisão contratual;</li>
+        <li>comunicação às autoridades competentes;</li>
+        <li>responsabilização civil ou criminal, quando aplicável.</li>
+      </ol>
+
+      <p>
+        A apuração deverá respeitar a imparcialidade, a confidencialidade e o
+        direito de manifestação dos envolvidos, conforme a legislação aplicável.
+      </p>
+    </section>
+
+    <section class="card" id="responsabilidades">
+      <h2>16. Responsabilidades</h2>
+
+      <h3>Administração</h3>
+      <ul>
+        <li>divulgar e apoiar o cumprimento deste Código;</li>
+        <li>promover ambiente ético e seguro;</li>
+        <li>disponibilizar canais de comunicação;</li>
+        <li>apurar relatos com seriedade;</li>
+        <li>aplicar medidas coerentes e proporcionais.</li>
+      </ul>
+
+      <h3>Gestores</h3>
+      <ul>
+        <li>dar exemplo de conduta;</li>
+        <li>orientar suas equipes;</li>
+        <li>prevenir riscos e irregularidades;</li>
+        <li>não tolerar assédio, fraude ou discriminação;</li>
+        <li>comunicar situações relevantes.</li>
+      </ul>
+
+      <h3>Colaboradores e terceiros</h3>
+      <ul>
+        <li>conhecer e cumprir este Código;</li>
+        <li>agir com responsabilidade e respeito;</li>
+        <li>proteger os interesses das empresas;</li>
+        <li>participar dos treinamentos;</li>
+        <li>comunicar dúvidas, riscos e irregularidades.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="vigencia">
+      <h2>17. Vigência e Revisão</h2>
+
+      <p>
+        Este Código entra em vigor na data de sua aprovação e deverá ser revisado
+        periodicamente ou sempre que houver alteração relevante nas atividades,
+        na legislação, na estrutura ou nos riscos das empresas.
+      </p>
+
+      <p>
+        Campo Grande/MS, ____ de ____________________ de ______.
+      </p>
+
+      <div class="assinatura">
+        <div class="linha">
+          Representante da Administração
+        </div>
+
+        <div class="linha">
+          Responsável pela Aprovação
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="termo">
+      <h2>Termo de Ciência e Compromisso</h2>
+
+      <p>
+        Declaro que recebi, li e compreendi o Código de Ética e Conduta da
+        Flexcampo, comprometendo-me a cumprir seus princípios, regras e
+        orientações, bem como a comunicar de boa-fé qualquer situação que possa
+        representar violação ao documento ou à legislação aplicável.
+      </p>
+
+      <br>
+
+      <p><strong>Nome:</strong> ________________________________________________</p>
+      <p><strong>CPF:</strong> _________________________________________________</p>
+      <p><strong>Cargo/Função:</strong> ________________________________________</p>
+      <p><strong>Empresa:</strong> _____________________________________________</p>
+      <p><strong>Local e data:</strong> ________________________________________</p>
+
+      <div class="assinatura">
+        <div class="linha">
+          Assinatura do colaborador
+        </div>
+
+        <div class="linha">
+          Assinatura da empresa
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Flexcampo</strong></p>
+    <p>Código de Ética e Conduta</p>
+    <p>Integridade em cada decisão. Respeito em cada relação.</p>
+  </footer>
+
+  <script>
+    function buscarTexto() {
+      const termo = document.getElementById("busca").value
+        .trim()
+        .toLowerCase();
+
+      const secoes = document.querySelectorAll("main section.card");
+
+      secoes.forEach(secao => {
+        const texto = secao.innerText.toLowerCase();
+
+        if (!termo || texto.includes(termo)) {
+          secao.classList.remove("oculto");
+        } else {
+          secao.classList.add("oculto");
+        }
+      });
+    }
+
+    function expandirTudo() {
+      document.querySelectorAll("section.card").forEach(secao => {
+        secao.classList.remove("oculto");
+      });
+      document.getElementById("busca").value = "";
+    }
+
+    function recolherTudo() {
+      document.querySelectorAll("section.card").forEach((secao, index) => {
+        if (index > 0) {
+          secao.classList.add("oculto");
+        }
+      });
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "p") {
+        event.preventDefault();
+        window.print();
+      }
+    });
+  </script>
+
+</body>
+</html>
