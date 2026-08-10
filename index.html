@@ -1,410 +1,514 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#2d5366">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#16232c">
+<title>Código de Ética e Conduta — Flexcampo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16232c;
+    --navy-2:#1e3140;
+    --paper:#f2efe4;
+    --paper-2:#e9e4d3;
+    --ink:#1c2420;
+    --ink-soft:#54544a;
+    --steel:#2f5d75;
+    --steel-2:#3f7590;
+    --amber:#c98a1f;
+    --amber-soft:#f4e6c8;
+    --rust:#a63f26;
+    --rust-soft:#f6e2da;
+    --line:#d6cfba;
+    --radius:2px;
+  }
 
-  <title>Código de Ética e Conduta — Flexcampo</title>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',Arial,sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
 
-  <style>
-    :root {
-      --azul: #2d5366;
-      --azul-escuro: #203d4c;
-      --azul-claro: #90a9c3;
-      --creme: #fffdf1;
-      --bege: #f5efe6;
-      --bege-escuro: #e8ddd0;
-      --texto: #2c2c2c;
-      --texto-claro: #675e53;
-      --borda: #e2d8ca;
-      --verde: #3f4d32;
-      --vermelho: #a93222;
-      --sombra: 0 10px 30px rgba(45, 83, 102, 0.12);
-    }
+  .mono{font-family:'JetBrains Mono',monospace;}
 
-    * {
-      box-sizing: border-box;
-    }
+  a{color:inherit;}
 
-    html {
-      scroll-behavior: smooth;
-    }
+  /* ---------- HERO / TITLE BLOCK ---------- */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    color:#f1ede0;
+    padding:76px 24px 0;
+    overflow:hidden;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(241,237,224,.05) 0px, rgba(241,237,224,.05) 1px, transparent 1px, transparent 64px),
+      repeating-linear-gradient(90deg, rgba(241,237,224,.05) 0px, rgba(241,237,224,.05) 1px, transparent 1px, transparent 64px);
+  }
 
-    body {
-      margin: 0;
-      color: var(--texto);
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, var(--bege), var(--bege-escuro));
-      line-height: 1.65;
-    }
+  .hero::before,.hero::after{
+    content:"";
+    position:absolute;
+    width:26px;height:26px;
+    border:1px solid rgba(201,138,31,.55);
+    opacity:.8;
+  }
+  .hero::before{top:22px;left:22px;border-right:0;border-bottom:0;}
+  .hero::after{bottom:0;right:22px;border-left:0;border-top:0;}
 
-    header {
-      min-height: 430px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 50px 20px;
-      background:
-        linear-gradient(rgba(32, 61, 76, .9), rgba(45, 83, 102, .88)),
-        radial-gradient(circle at top right, #90a9c3, transparent 35%);
-    }
+  .hero-inner{
+    position:relative;
+    max-width:1180px;
+    margin:0 auto;
+  }
 
-    header h1 {
-      max-width: 950px;
-      margin: 0 auto 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 8vw, 88px);
-      line-height: 1.05;
-      letter-spacing: -2px;
-      text-transform: uppercase;
-    }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--amber);
+    display:inline-block;
+  }
 
-    header p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: clamp(17px, 2vw, 23px);
-      color: #f8f2e8;
-    }
+  .hero h1{
+    font-family:'Oswald',Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:.01em;
+    font-size:clamp(38px,6vw,74px);
+    line-height:1.02;
+    margin:22px 0 20px;
+    max-width:900px;
+  }
 
-    .empresa {
-      margin-top: 30px;
-      font-size: 14px;
-      letter-spacing: .5px;
-      color: #dce8ef;
-    }
+  .hero p.lead{
+    max-width:600px;
+    font-size:17px;
+    color:#c7d1d6;
+    margin:0 0 40px;
+  }
 
-    .barra {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding: 14px 20px;
-      background: rgba(255, 253, 241, .96);
-      border-bottom: 1px solid var(--borda);
-      box-shadow: 0 3px 12px rgba(0,0,0,.06);
-      backdrop-filter: blur(8px);
-    }
+  .titleblock{
+    border:1px solid rgba(241,237,224,.22);
+    border-bottom:0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    background:rgba(20,32,40,.55);
+    backdrop-filter:blur(2px);
+  }
+  .titleblock div{
+    padding:14px 16px;
+    border-right:1px solid rgba(241,237,224,.22);
+    border-bottom:1px solid rgba(241,237,224,.22);
+  }
+  .titleblock div:last-child{border-right:0;}
+  .titleblock span{
+    display:block;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:10px;
+    color:var(--amber);
+    margin-bottom:5px;
+  }
+  .titleblock strong{
+    color:#f1ede0;
+    font-weight:500;
+    font-size:13px;
+  }
 
-    .barra a,
-    button {
-      border: 0;
-      border-radius: 999px;
-      padding: 10px 16px;
-      color: white;
-      background: var(--azul);
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-      transition: .2s ease;
-    }
+  @media (max-width:720px){
+    .titleblock{grid-template-columns:repeat(2,1fr);}
+  }
 
-    .barra a:hover,
-    button:hover {
-      background: var(--azul-escuro);
-      transform: translateY(-2px);
-    }
+  /* ---------- STICKY TOOLBAR (mobile / fallback) ---------- */
+  .toolbar{
+    position:sticky;
+    top:0;
+    z-index:20;
+    display:flex;
+    gap:8px;
+    align-items:center;
+    padding:12px 20px;
+    background:rgba(242,239,228,.94);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(6px);
+    overflow-x:auto;
+  }
+  .toolbar-search{
+    flex:1;
+    min-width:160px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#fff;
+    border:1px solid var(--line);
+    padding:8px 12px;
+    border-radius:999px;
+  }
+  .toolbar-search input{
+    border:0;outline:0;flex:1;font-family:'Inter',sans-serif;font-size:14px;background:transparent;color:var(--ink);
+  }
+  .toolbar button{
+    white-space:nowrap;
+    border:1px solid var(--steel);
+    background:transparent;
+    color:var(--steel);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding:9px 14px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.18s ease;
+  }
+  .toolbar button:hover{background:var(--steel);color:#fff;}
+  .toolbar button.primary{background:var(--navy);border-color:var(--navy);color:#f1ede0;}
+  .toolbar button.primary:hover{background:var(--navy-2);}
 
-    .container {
-      width: min(1100px, calc(100% - 32px));
-      margin: 35px auto 70px;
-    }
+  /* ---------- LAYOUT ---------- */
+  .layout{
+    max-width:1180px;
+    margin:0 auto;
+    padding:44px 20px 100px;
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:44px;
+    align-items:start;
+  }
 
-    .controles {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 24px;
-    }
+  nav.index{
+    position:sticky;
+    top:72px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    max-height:calc(100vh - 100px);
+    overflow-y:auto;
+    padding-right:6px;
+  }
+  nav.index a{
+    display:flex;
+    gap:10px;
+    align-items:baseline;
+    padding:9px 10px;
+    text-decoration:none;
+    font-size:13.5px;
+    color:var(--ink-soft);
+    border-left:2px solid transparent;
+    transition:.15s ease;
+  }
+  nav.index a:hover{color:var(--ink);border-left-color:var(--amber);background:rgba(201,138,31,.06);}
+  nav.index a .code{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--steel-2);
+    min-width:44px;
+  }
 
-    .controles input {
-      flex: 1;
-      min-width: 240px;
-      padding: 13px 16px;
-      border: 1px solid var(--borda);
-      border-radius: 999px;
-      background: var(--creme);
-      font-size: 15px;
-      outline: none;
-    }
+  @media (max-width:960px){
+    .layout{grid-template-columns:1fr;}
+    nav.index{display:none;}
+  }
 
-    .controles input:focus {
-      border-color: var(--azul);
-      box-shadow: 0 0 0 3px rgba(45, 83, 102, .15);
-    }
+  main{min-width:0;}
 
-    .card {
-      margin-bottom: 22px;
-      padding: 28px;
-      background: var(--creme);
-      border: 1px solid rgba(226, 216, 202, .9);
-      border-radius: 18px;
-      box-shadow: var(--sombra);
-    }
+  /* ---------- CARD / SPEC SHEET ---------- */
+  .card{
+    position:relative;
+    background:#fbfaf4;
+    border:1px solid var(--line);
+    margin-bottom:20px;
+    padding:36px 38px 34px;
+    scroll-margin-top:80px;
+  }
+  .card::before{ /* corner registration mark */
+    content:"";
+    position:absolute;
+    top:14px;right:14px;
+    width:14px;height:14px;
+    background:
+      linear-gradient(var(--steel-2),var(--steel-2)) center/100% 1px no-repeat,
+      linear-gradient(90deg,var(--steel-2),var(--steel-2)) center/1px 100% no-repeat;
+    opacity:.55;
+  }
 
-    .card h2 {
-      margin: 0 0 16px;
-      padding-bottom: 10px;
-      color: var(--azul-escuro);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(25px, 4vw, 34px);
-      border-bottom: 2px solid var(--azul-claro);
-    }
+  .card .doccode{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--steel);
+    border:1px solid var(--steel);
+    padding:3px 9px;
+    margin-bottom:16px;
+    border-radius:2px;
+  }
 
-    .card h3 {
-      color: var(--azul);
-      margin-top: 26px;
-      margin-bottom: 8px;
-      font-size: 20px;
-    }
+  .card h2{
+    font-family:'Oswald',Arial,sans-serif;
+    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:.01em;
+    font-size:clamp(21px,3vw,28px);
+    color:var(--navy);
+    margin:0 0 18px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
 
-    .card p {
-      margin: 10px 0;
-    }
+  .card h3{
+    font-family:'Oswald',Arial,sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    font-size:15px;
+    color:var(--steel);
+    margin:28px 0 10px;
+  }
 
-    .card ul,
-    .card ol {
-      padding-left: 24px;
-    }
+  .card p{margin:10px 0;color:var(--ink);}
+  .card ul,.card ol{padding-left:22px;margin:12px 0;}
+  .card li{margin:7px 0;}
 
-    .card li {
-      margin: 7px 0;
-    }
+  /* ---------- callouts ---------- */
+  .callout{
+    margin:20px 0;
+    padding:16px 18px 16px 22px;
+    background:#fff;
+    border:1px solid var(--line);
+    position:relative;
+  }
+  .callout strong.tag{
+    display:inline-block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    padding:2px 8px;
+  }
 
-    .destaque {
-      padding: 18px 20px;
-      margin: 18px 0;
-      border-left: 5px solid var(--azul);
-      background: #edf3f5;
-      border-radius: 8px;
-    }
+  .callout.info{border-left:3px solid var(--steel);}
+  .callout.info strong.tag{color:var(--steel);background:rgba(47,93,117,.08);}
 
-    .valores {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
+  .callout.ok{border-left:3px solid var(--amber);}
+  .callout.ok strong.tag{color:#8a5f12;background:var(--amber-soft);}
 
-    .valor {
-      padding: 18px;
-      text-align: center;
-      color: white;
-      background: var(--azul);
-      border-radius: 14px;
-    }
+  .callout.no{
+    border-left:0;
+    background-image:repeating-linear-gradient(-45deg,var(--rust) 0 6px, #1c2420 6px 12px);
+    background-size:12px 100%;
+    background-repeat:no-repeat;
+    padding-left:26px;
+  }
+  .callout.no strong.tag{color:var(--rust);background:var(--rust-soft);}
 
-    .valor strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 18px;
-    }
+  /* ---------- values grid ---------- */
+  .valores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1px;
+    background:var(--line);
+    margin:20px 0 4px;
+    border:1px solid var(--line);
+  }
+  .valor{
+    background:#fff;
+    padding:18px 16px;
+  }
+  .valor .vnum{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--amber);
+    letter-spacing:.06em;
+  }
+  .valor strong{
+    display:block;
+    font-family:'Oswald',Arial,sans-serif;
+    text-transform:uppercase;
+    font-size:15px;
+    color:var(--navy);
+    margin:6px 0 6px;
+  }
+  .valor p{margin:0;font-size:13.5px;color:var(--ink-soft);}
 
-    .empresa-box {
-      padding: 18px;
-      margin: 14px 0;
-      background: #f6f0e7;
-      border: 1px solid var(--borda);
-      border-radius: 12px;
-    }
+  /* ---------- empresa box ---------- */
+  .empresa-box{
+    border:1px solid var(--line);
+    background:#fff;
+    padding:16px 18px;
+    margin:14px 0;
+    font-size:14px;
+  }
+  .empresa-box .lbl{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--steel);
+    display:block;
+    margin-bottom:6px;
+  }
 
-    .empresa-box strong {
-      color: var(--azul-escuro);
-    }
+  /* ---------- signature ---------- */
+  .assinatura{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    margin-top:56px;
+  }
+  .linha{
+    padding-top:40px;
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    border-top:1px solid #999;
+    font-family:'JetBrains Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+  }
+  @media (max-width:650px){.assinatura{grid-template-columns:1fr;gap:50px;}}
 
-    .proibido {
-      border-left-color: var(--vermelho);
-      background: #fff0ed;
-    }
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--navy);
+    color:#aebac1;
+    padding:34px 20px;
+    text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+  }
+  footer strong{color:#f1ede0;font-family:'Oswald',sans-serif;letter-spacing:.06em;font-size:14px;}
 
-    .obrigatorio {
-      border-left-color: var(--verde);
-      background: #eef5e9;
-    }
+  .oculto{display:none !important;}
 
-    .assinatura {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 50px;
-    }
+  /* ---------- reveal on scroll ---------- */
+  .card{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease;}
+  .card.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .card{opacity:1;transform:none;transition:none;}
+  }
 
-    .linha {
-      padding-top: 45px;
-      text-align: center;
-      border-top: 1px solid #555;
-    }
+  :focus-visible{outline:2px solid var(--amber);outline-offset:2px;}
 
-    footer {
-      padding: 35px 20px;
-      text-align: center;
-      color: white;
-      background: var(--azul);
-    }
-
-    footer p {
-      margin: 5px;
-    }
-
-    .oculto {
-      display: none !important;
-    }
-
-    @media print {
-      body {
-        background: white;
-      }
-
-      .barra,
-      .controles,
-      .nao-imprimir {
-        display: none !important;
-      }
-
-      header {
-        min-height: 280px;
-        color: black;
-        background: white;
-        border-bottom: 3px solid var(--azul);
-      }
-
-      header h1,
-      header p,
-      header .empresa {
-        color: black;
-      }
-
-      .container {
-        width: 100%;
-        margin: 0;
-      }
-
-      .card {
-        box-shadow: none;
-        break-inside: avoid;
-        border: 0;
-        padding: 18px 0;
-      }
-
-      footer {
-        color: black;
-        background: white;
-        border-top: 1px solid #aaa;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .card {
-        padding: 21px 17px;
-      }
-
-      .assinatura {
-        grid-template-columns: 1fr;
-        gap: 55px;
-      }
-
-      .barra {
-        justify-content: flex-start;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-      }
-    }
-  </style>
+  @media print{
+    .toolbar,nav.index{display:none !important;}
+    body{background:#fff;}
+    .hero{background:#fff;color:#000;padding:20px;}
+    .hero::before,.hero::after{display:none;}
+    .titleblock{background:#fff;color:#000;}
+    .titleblock strong,.titleblock span{color:#000;}
+    .layout{grid-template-columns:1fr;padding:0 10px;}
+    .card{opacity:1;transform:none;break-inside:avoid;border:0;border-bottom:1px solid #ccc;padding:16px 0;}
+    .callout.no{background-image:none;border-left:3px solid #000;padding-left:18px;}
+  }
+</style>
 </head>
-
 <body>
 
-  <header id="inicio">
-    <div>
-      <h1>Código de Ética e Conduta</h1>
-      <p>Integridade, respeito, transparência e responsabilidade em todas as nossas relações.</p>
+<header class="hero" id="inicio">
+  <div class="hero-inner">
+    <span class="eyebrow">Documento interno · Flexcampo</span>
+    <h1>Código de Ética<br>e Conduta</h1>
+    <p class="lead">Integridade, respeito, transparência e responsabilidade em todas as nossas relações — com clientes, colaboradores, fornecedores e a comunidade.</p>
 
-      <div class="empresa">
-        FLEXCAMPO — COMÉRCIO, SERVIÇOS E SOLUÇÕES
-      </div>
+    <div class="titleblock">
+      <div><span>Documento</span><strong>FLX‑COD‑001</strong></div>
+      <div><span>Revisão</span><strong>Ed. 2026</strong></div>
+      <div><span>Empresa</span><strong>Flexcampo Comércio</strong></div>
+      <div><span>Local</span><strong>Campo Grande / MS</strong></div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <nav class="barra" aria-label="Navegação do documento">
-    <a href="#apresentacao">Apresentação</a>
-    <a href="#principios">Princípios</a>
-    <a href="#clientes">Clientes</a>
-    <a href="#colaboradores">Colaboradores</a>
-    <a href="#integridade">Integridade</a>
-    <a href="#seguranca">Segurança</a>
-    <a href="#denuncias">Denúncias</a>
-    <button onclick="window.print()">Imprimir / PDF</button>
+<div class="toolbar nao-imprimir">
+  <div class="toolbar-search">
+    <span class="mono" style="font-size:13px;color:var(--ink-soft);">⌕</span>
+    <input id="busca" type="search" placeholder="Pesquisar no código de ética..." oninput="buscarTexto()" aria-label="Pesquisar no Código de Ética">
+  </div>
+  <button onclick="expandirTudo()">Expandir tudo</button>
+  <button onclick="recolherTudo()">Recolher tudo</button>
+  <button class="primary" onclick="window.print()">Imprimir / PDF</button>
+</div>
+
+<div class="layout">
+
+  <nav class="index" aria-label="Índice do documento">
+    <a href="#apresentacao"><span class="code mono">00</span>Apresentação</a>
+    <a href="#objetivo"><span class="code mono">01</span>Objetivo</a>
+    <a href="#principios"><span class="code mono">02</span>Princípios</a>
+    <a href="#clientes"><span class="code mono">03</span>Clientes</a>
+    <a href="#produtos"><span class="code mono">04</span>Produtos</a>
+    <a href="#servicos"><span class="code mono">05</span>Serviços</a>
+    <a href="#colaboradores"><span class="code mono">06</span>Colaboradores</a>
+    <a href="#fornecedores"><span class="code mono">07</span>Fornecedores</a>
+    <a href="#integridade"><span class="code mono">08</span>Integridade</a>
+    <a href="#seguranca"><span class="code mono">09</span>Segurança</a>
+    <a href="#informacoes"><span class="code mono">10</span>Dados</a>
+    <a href="#ambiental"><span class="code mono">11</span>Ambiental</a>
+    <a href="#recursos"><span class="code mono">12</span>Recursos</a>
+    <a href="#comunidade"><span class="code mono">13</span>Comunidade</a>
+    <a href="#denuncias"><span class="code mono">14</span>Denúncias</a>
+    <a href="#medidas"><span class="code mono">15</span>Medidas</a>
+    <a href="#responsabilidades"><span class="code mono">16</span>Responsáveis</a>
+    <a href="#vigencia"><span class="code mono">17</span>Vigência</a>
+    <a href="#termo"><span class="code mono">18</span>Termo</a>
   </nav>
 
-  <main class="container">
-
-    <div class="controles nao-imprimir">
-      <input
-        id="busca"
-        type="search"
-        placeholder="Pesquisar neste Código de Ética..."
-        oninput="buscarTexto()"
-        aria-label="Pesquisar no Código de Ética"
-      >
-      <button onclick="expandirTudo()">Expandir tudo</button>
-      <button onclick="recolherTudo()">Recolher tudo</button>
-    </div>
+  <main>
 
     <section class="card" id="apresentacao">
+      <span class="doccode mono">FLX‑00</span>
       <h2>Apresentação</h2>
+      <p>Este Código de Ética e Conduta estabelece os princípios, valores e padrões de comportamento esperados nas atividades da Flexcampo e de suas empresas relacionadas.</p>
+      <p>O documento aplica-se às atividades comerciais e de serviços desenvolvidas pelas empresas, incluindo o comércio de produtos de borracha, ferragens, ferramentas, materiais elétricos, hidráulicos, tintas, artigos de uso pessoal e doméstico, equipamentos e suprimentos de informática, peças, acessórios e serviços de reparação e manutenção.</p>
 
-      <p>
-        Este Código de Ética e Conduta estabelece os princípios, valores e padrões
-        de comportamento esperados nas atividades da Flexcampo e de suas empresas
-        relacionadas.
-      </p>
-
-      <p>
-        O documento aplica-se às atividades comerciais e de serviços desenvolvidas
-        pelas empresas, incluindo o comércio de produtos de borracha, ferragens,
-        ferramentas, materiais elétricos, hidráulicos, tintas, artigos de uso
-        pessoal e doméstico, equipamentos e suprimentos de informática, peças,
-        acessórios e serviços de reparação e manutenção.
-      </p>
-
-      <div class="destaque">
-        <strong>Importante:</strong>
-        este Código não substitui a legislação, as normas técnicas, os contratos,
-        os procedimentos internos ou as orientações de saúde e segurança. Em caso
-        de conflito, deverá prevalecer a legislação aplicável.
+      <div class="callout info">
+        <strong class="tag">Importante</strong>
+        <p style="margin:0;">Este Código não substitui a legislação, as normas técnicas, os contratos, os procedimentos internos ou as orientações de saúde e segurança. Em caso de conflito, deverá prevalecer a legislação aplicável.</p>
       </div>
 
       <div class="empresa-box">
-        <strong>Empresa 1:</strong><br>
+        <span class="lbl">Empresa 1</span>
         Flexcar Comércio de Borrachas e Serviços Ltda.<br>
         Nome fantasia: Flexcampo Comércio de Borrachas Ltda.<br>
         CNPJ: 13.233.956/0001-85
       </div>
 
       <div class="empresa-box">
-        <strong>Empresa 2:</strong><br>
+        <span class="lbl">Empresa 2</span>
         Flexcampo Comércio de Ferragem e Serviços Ltda.<br>
         Nome fantasia: Flexcampo<br>
         CNPJ: 25.117.337/0001-04
       </div>
 
-      <p>
-        A identificação cadastral e as atividades econômicas devem ser confirmadas
-        nos documentos oficiais atualizados de cada empresa.
-      </p>
+      <p>A identificação cadastral e as atividades econômicas devem ser confirmadas nos documentos oficiais atualizados de cada empresa.</p>
     </section>
 
     <section class="card" id="objetivo">
+      <span class="doccode mono">FLX‑01</span>
       <h2>1. Objetivo e Abrangência</h2>
-
       <p>Este Código tem como objetivos:</p>
-
       <ul>
         <li>orientar decisões e comportamentos profissionais;</li>
         <li>promover relações baseadas em respeito, honestidade e transparência;</li>
@@ -413,43 +517,30 @@
         <li>assegurar a qualidade e a segurança dos produtos e serviços;</li>
         <li>fortalecer a reputação e a sustentabilidade das empresas.</li>
       </ul>
-
-      <p>
-        O Código aplica-se a sócios, administradores, gestores, empregados,
-        aprendizes, estagiários, representantes, prestadores de serviços e
-        terceiros que atuem em nome ou em benefício das empresas.
-      </p>
+      <p>O Código aplica-se a sócios, administradores, gestores, empregados, aprendizes, estagiários, representantes, prestadores de serviços e terceiros que atuem em nome ou em benefício das empresas.</p>
     </section>
 
     <section class="card" id="principios">
+      <span class="doccode mono">FLX‑02</span>
       <h2>2. Missão, Visão, Valores e Princípios</h2>
 
       <h3>Missão</h3>
-      <p>
-        Atender clientes com soluções confiáveis em produtos, ferramentas,
-        materiais e serviços, combinando qualidade, orientação responsável,
-        respeito e eficiência.
-      </p>
+      <p>Atender clientes com soluções confiáveis em produtos, ferramentas, materiais e serviços, combinando qualidade, orientação responsável, respeito e eficiência.</p>
 
       <h3>Visão</h3>
-      <p>
-        Ser reconhecida pela confiança, excelência no atendimento, conduta ética
-        e responsabilidade na comercialização de produtos e na prestação de serviços.
-      </p>
+      <p>Ser reconhecida pela confiança, excelência no atendimento, conduta ética e responsabilidade na comercialização de produtos e na prestação de serviços.</p>
 
       <h3>Valores</h3>
-
       <div class="valores">
-        <div class="valor"><strong>Integridade</strong>Agir corretamente, mesmo quando ninguém estiver observando.</div>
-        <div class="valor"><strong>Respeito</strong>Valorizar todas as pessoas e suas diferenças.</div>
-        <div class="valor"><strong>Transparência</strong>Comunicar informações claras e verdadeiras.</div>
-        <div class="valor"><strong>Qualidade</strong>Buscar excelência nos produtos e serviços.</div>
-        <div class="valor"><strong>Segurança</strong>Priorizar a proteção das pessoas.</div>
-        <div class="valor"><strong>Responsabilidade</strong>Cuidar dos recursos, do ambiente e da comunidade.</div>
+        <div class="valor"><span class="vnum mono">V.01</span><strong>Integridade</strong><p>Agir corretamente, mesmo quando ninguém estiver observando.</p></div>
+        <div class="valor"><span class="vnum mono">V.02</span><strong>Respeito</strong><p>Valorizar todas as pessoas e suas diferenças.</p></div>
+        <div class="valor"><span class="vnum mono">V.03</span><strong>Transparência</strong><p>Comunicar informações claras e verdadeiras.</p></div>
+        <div class="valor"><span class="vnum mono">V.04</span><strong>Qualidade</strong><p>Buscar excelência nos produtos e serviços.</p></div>
+        <div class="valor"><span class="vnum mono">V.05</span><strong>Segurança</strong><p>Priorizar a proteção das pessoas.</p></div>
+        <div class="valor"><span class="vnum mono">V.06</span><strong>Responsabilidade</strong><p>Cuidar dos recursos, do ambiente e da comunidade.</p></div>
       </div>
 
       <h3>Princípios fundamentais</h3>
-
       <ul>
         <li>agir de boa-fé e com honestidade;</li>
         <li>cumprir as leis, normas técnicas e regras internas;</li>
@@ -463,16 +554,13 @@
     </section>
 
     <section class="card" id="clientes">
+      <span class="doccode mono">FLX‑03</span>
       <h2>3. Relacionamento com Clientes e Consumidores</h2>
+      <p>O relacionamento com clientes deve ser baseado em respeito, cordialidade, clareza e solução adequada de suas necessidades.</p>
 
-      <p>
-        O relacionamento com clientes deve ser baseado em respeito, cordialidade,
-        clareza e solução adequada de suas necessidades.
-      </p>
-
-      <div class="destaque obrigatorio">
-        <strong>É obrigatório:</strong>
-        <ul>
+      <div class="callout ok">
+        <strong class="tag">É obrigatório</strong>
+        <ul style="margin:0;">
           <li>prestar atendimento educado, profissional e sem discriminação;</li>
           <li>informar corretamente preços, prazos, garantias e condições de pagamento;</li>
           <li>apresentar produtos compatíveis com a finalidade informada pelo cliente;</li>
@@ -482,9 +570,9 @@
         </ul>
       </div>
 
-      <div class="destaque proibido">
-        <strong>É proibido:</strong>
-        <ul>
+      <div class="callout no">
+        <strong class="tag">É proibido</strong>
+        <ul style="margin:0;">
           <li>realizar propaganda enganosa;</li>
           <li>omitir defeitos, limitações ou riscos conhecidos;</li>
           <li>alterar preços ou condições sem informar o cliente;</li>
@@ -496,13 +584,9 @@
     </section>
 
     <section class="card" id="produtos">
+      <span class="doccode mono">FLX‑04</span>
       <h2>4. Qualidade, Produtos e Armazenamento</h2>
-
-      <p>
-        As empresas devem comercializar produtos de origem regular e compatíveis
-        com as especificações informadas ao cliente.
-      </p>
-
+      <p>As empresas devem comercializar produtos de origem regular e compatíveis com as especificações informadas ao cliente.</p>
       <ul>
         <li>conferir quantidade, integridade, validade e condições das embalagens;</li>
         <li>armazenar os produtos de acordo com suas características;</li>
@@ -512,19 +596,13 @@
         <li>manter estoques organizados e protegidos contra danos;</li>
         <li>evitar a venda de produtos sem origem ou documentação adequada.</li>
       </ul>
-
-      <p>
-        A indicação de ferramentas, materiais elétricos, hidráulicos, tintas,
-        borrachas e demais produtos deve considerar a finalidade informada, as
-        condições de uso e a competência técnica necessária.
-      </p>
+      <p>A indicação de ferramentas, materiais elétricos, hidráulicos, tintas, borrachas e demais produtos deve considerar a finalidade informada, as condições de uso e a competência técnica necessária.</p>
     </section>
 
     <section class="card" id="servicos">
+      <span class="doccode mono">FLX‑05</span>
       <h2>5. Serviços e Manutenção</h2>
-
       <p>Na prestação de serviços, todos devem:</p>
-
       <ul>
         <li>elaborar orçamentos claros e, sempre que possível, por escrito;</li>
         <li>informar escopo, prazo, preço, materiais, peças e garantia;</li>
@@ -536,25 +614,18 @@
         <li>comunicar danos, riscos, atrasos ou alterações relevantes;</li>
         <li>manter o local de trabalho organizado e seguro.</li>
       </ul>
-
-      <div class="destaque proibido">
-        <strong>Não é permitido:</strong>
-        cobrar por serviço não realizado, substituir peças sem autorização,
-        ocultar danos preexistentes ou executar reparos desnecessários para
-        aumentar o valor da cobrança.
+      <div class="callout no">
+        <strong class="tag">Não é permitido</strong>
+        <p style="margin:0;">Cobrar por serviço não realizado, substituir peças sem autorização, ocultar danos preexistentes ou executar reparos desnecessários para aumentar o valor da cobrança.</p>
       </div>
     </section>
 
     <section class="card" id="colaboradores">
+      <span class="doccode mono">FLX‑06</span>
       <h2>6. Conduta dos Colaboradores</h2>
-
-      <p>
-        Todos têm direito a um ambiente de trabalho seguro, respeitoso e livre
-        de assédio e discriminação.
-      </p>
+      <p>Todos têm direito a um ambiente de trabalho seguro, respeitoso e livre de assédio e discriminação.</p>
 
       <h3>Condutas esperadas</h3>
-
       <ul>
         <li>agir com educação, profissionalismo e cooperação;</li>
         <li>cumprir horários, responsabilidades e procedimentos;</li>
@@ -565,7 +636,6 @@
       </ul>
 
       <h3>Condutas não toleradas</h3>
-
       <ul>
         <li>assédio moral ou sexual;</li>
         <li>ameaças, agressões ou humilhações;</li>
@@ -577,16 +647,10 @@
     </section>
 
     <section class="card" id="fornecedores">
+      <span class="doccode mono">FLX‑07</span>
       <h2>7. Fornecedores e Parceiros</h2>
-
-      <p>
-        A seleção e contratação de fornecedores devem considerar critérios
-        objetivos, como qualidade, preço, prazo, regularidade, segurança,
-        capacidade de atendimento e reputação.
-      </p>
-
+      <p>A seleção e contratação de fornecedores devem considerar critérios objetivos, como qualidade, preço, prazo, regularidade, segurança, capacidade de atendimento e reputação.</p>
       <p>É proibido:</p>
-
       <ul>
         <li>solicitar ou aceitar vantagens pessoais de fornecedores;</li>
         <li>direcionar compras por interesse particular;</li>
@@ -594,27 +658,16 @@
         <li>aceitar produtos sem origem ou documentação adequada;</li>
         <li>manter relações com empresas envolvidas em trabalho infantil ou forçado.</li>
       </ul>
-
-      <p>
-        Fornecedores e parceiros devem cumprir a legislação trabalhista,
-        ambiental, fiscal e de segurança, além de respeitar este Código quando
-        atuarem em nome das empresas.
-      </p>
+      <p>Fornecedores e parceiros devem cumprir a legislação trabalhista, ambiental, fiscal e de segurança, além de respeitar este Código quando atuarem em nome das empresas.</p>
     </section>
 
     <section class="card" id="integridade">
+      <span class="doccode mono">FLX‑08</span>
       <h2>8. Conflitos de Interesse, Brindes e Integridade</h2>
 
       <h3>Conflitos de interesse</h3>
-
-      <p>
-        Conflito de interesse ocorre quando interesses pessoais, familiares ou
-        financeiros possam influenciar, ou parecer influenciar, uma decisão
-        profissional.
-      </p>
-
+      <p>Conflito de interesse ocorre quando interesses pessoais, familiares ou financeiros possam influenciar, ou parecer influenciar, uma decisão profissional.</p>
       <p>Devem ser comunicadas à administração situações como:</p>
-
       <ul>
         <li>negociação com empresa de familiar ou pessoa próxima;</li>
         <li>participação financeira em fornecedor, cliente ou concorrente;</li>
@@ -624,14 +677,8 @@
       </ul>
 
       <h3>Brindes, presentes e vantagens</h3>
-
-      <p>
-        Brindes institucionais de baixo valor, sem expectativa de contrapartida,
-        podem ser aceitos quando não influenciarem decisões profissionais.
-      </p>
-
+      <p>Brindes institucionais de baixo valor, sem expectativa de contrapartida, podem ser aceitos quando não influenciarem decisões profissionais.</p>
       <p>Devem ser recusados ou comunicados à administração:</p>
-
       <ul>
         <li>dinheiro, cartões, empréstimos ou equivalentes;</li>
         <li>presentes de valor elevado;</li>
@@ -641,9 +688,7 @@
       </ul>
 
       <h3>Combate à corrupção e fraudes</h3>
-
       <p>As empresas não toleram:</p>
-
       <ul>
         <li>suborno ou pagamento de propina;</li>
         <li>fraudes em vendas, compras, estoque ou caixa;</li>
@@ -656,13 +701,9 @@
     </section>
 
     <section class="card" id="seguranca">
+      <span class="doccode mono">FLX‑09</span>
       <h2>9. Saúde, Segurança e Prevenção de Acidentes</h2>
-
-      <p>
-        A proteção da vida, da saúde e da integridade física deve estar acima de
-        qualquer urgência comercial.
-      </p>
-
+      <p>A proteção da vida, da saúde e da integridade física deve estar acima de qualquer urgência comercial.</p>
       <ul>
         <li>cumprir as normas de saúde e segurança;</li>
         <li>utilizar os equipamentos de proteção fornecidos;</li>
@@ -677,15 +718,10 @@
     </section>
 
     <section class="card" id="informacoes">
+      <span class="doccode mono">FLX‑10</span>
       <h2>10. Proteção de Informações e Dados Pessoais</h2>
-
-      <p>
-        Informações de clientes, fornecedores, colaboradores e empresas devem ser
-        utilizadas somente para finalidades legítimas e profissionais.
-      </p>
-
+      <p>Informações de clientes, fornecedores, colaboradores e empresas devem ser utilizadas somente para finalidades legítimas e profissionais.</p>
       <p>Devem ser protegidos:</p>
-
       <ul>
         <li>dados pessoais;</li>
         <li>documentos fiscais e cadastrais;</li>
@@ -694,23 +730,13 @@
         <li>informações de serviços e reparos;</li>
         <li>dados bancários e informações estratégicas.</li>
       </ul>
-
-      <p>
-        É proibido compartilhar, copiar ou utilizar informações para benefício
-        próprio ou de terceiros sem autorização. Perdas de documentos, envio
-        indevido de dados ou acessos não autorizados devem ser comunicados
-        imediatamente.
-      </p>
+      <p>É proibido compartilhar, copiar ou utilizar informações para benefício próprio ou de terceiros sem autorização. Perdas de documentos, envio indevido de dados ou acessos não autorizados devem ser comunicados imediatamente.</p>
     </section>
 
     <section class="card" id="ambiental">
+      <span class="doccode mono">FLX‑11</span>
       <h2>11. Responsabilidade Ambiental</h2>
-
-      <p>
-        As empresas devem reduzir desperdícios e promover o armazenamento,
-        manuseio e descarte responsável de produtos e resíduos.
-      </p>
-
+      <p>As empresas devem reduzir desperdícios e promover o armazenamento, manuseio e descarte responsável de produtos e resíduos.</p>
       <ul>
         <li>separar resíduos recicláveis e não recicláveis;</li>
         <li>destinar corretamente borrachas, embalagens e peças;</li>
@@ -720,22 +746,16 @@
         <li>reduzir o consumo de água, energia, papel e materiais;</li>
         <li>utilizar destinadores regularizados quando necessário.</li>
       </ul>
-
-      <div class="destaque proibido">
-        Nenhum resíduo deve ser descartado em local inadequado ou de maneira que
-        cause dano ao meio ambiente ou à saúde pública.
+      <div class="callout no">
+        <strong class="tag">Atenção</strong>
+        <p style="margin:0;">Nenhum resíduo deve ser descartado em local inadequado ou de maneira que cause dano ao meio ambiente ou à saúde pública.</p>
       </div>
     </section>
 
     <section class="card" id="recursos">
+      <span class="doccode mono">FLX‑12</span>
       <h2>12. Uso dos Recursos da Empresa</h2>
-
-      <p>
-        Veículos, computadores, sistemas, ferramentas, estoques, equipamentos,
-        instalações e recursos financeiros devem ser utilizados de forma
-        responsável e para finalidades autorizadas.
-      </p>
-
+      <p>Veículos, computadores, sistemas, ferramentas, estoques, equipamentos, instalações e recursos financeiros devem ser utilizados de forma responsável e para finalidades autorizadas.</p>
       <ul>
         <li>não retirar produtos ou materiais sem registro e autorização;</li>
         <li>não utilizar recursos para fins ilícitos;</li>
@@ -747,32 +767,17 @@
     </section>
 
     <section class="card" id="comunidade">
+      <span class="doccode mono">FLX‑13</span>
       <h2>13. Relacionamento com a Comunidade</h2>
-
-      <p>
-        As empresas reconhecem sua responsabilidade perante a comunidade em que
-        atuam e devem conduzir suas atividades com respeito às pessoas, ao
-        comércio local e ao meio ambiente.
-      </p>
-
-      <p>
-        A atuação empresarial deve contribuir para relações comerciais honestas,
-        geração de oportunidades, segurança das operações e desenvolvimento
-        responsável da comunidade.
-      </p>
+      <p>As empresas reconhecem sua responsabilidade perante a comunidade em que atuam e devem conduzir suas atividades com respeito às pessoas, ao comércio local e ao meio ambiente.</p>
+      <p>A atuação empresarial deve contribuir para relações comerciais honestas, geração de oportunidades, segurança das operações e desenvolvimento responsável da comunidade.</p>
     </section>
 
     <section class="card" id="denuncias">
+      <span class="doccode mono">FLX‑14</span>
       <h2>14. Comunicação de Irregularidades</h2>
-
-      <p>
-        Dúvidas, suspeitas de irregularidades ou violações deste Código devem ser
-        comunicadas à liderança, à administração ou ao canal interno indicado
-        oficialmente pelas empresas.
-      </p>
-
+      <p>Dúvidas, suspeitas de irregularidades ou violações deste Código devem ser comunicadas à liderança, à administração ou ao canal interno indicado oficialmente pelas empresas.</p>
       <p>A comunicação deve conter, sempre que possível:</p>
-
       <ul>
         <li>descrição dos fatos;</li>
         <li>data e local da ocorrência;</li>
@@ -781,37 +786,20 @@
         <li>possíveis testemunhas.</li>
       </ul>
 
-      <div class="destaque obrigatorio">
-        <strong>Não retaliação:</strong>
-        não será admitida qualquer retaliação contra quem comunicar uma
-        preocupação de boa-fé, ainda que a apuração não confirme a irregularidade.
+      <div class="callout ok">
+        <strong class="tag">Não retaliação</strong>
+        <p style="margin:0;">Não será admitida qualquer retaliação contra quem comunicar uma preocupação de boa-fé, ainda que a apuração não confirme a irregularidade.</p>
       </div>
 
-      <p>
-        <strong>Canal de denúncias:</strong>
-        ________________________________________________
-      </p>
-
-      <p>
-        <strong>E-mail:</strong>
-        ________________________________________________
-      </p>
-
-      <p>
-        <strong>Telefone/WhatsApp:</strong>
-        ________________________________________________
-      </p>
+      <p><strong>Canal de denúncias:</strong> ________________________________________________</p>
+      <p><strong>E-mail:</strong> ________________________________________________</p>
+      <p><strong>Telefone/WhatsApp:</strong> ________________________________________________</p>
     </section>
 
     <section class="card" id="medidas">
+      <span class="doccode mono">FLX‑15</span>
       <h2>15. Descumprimento e Medidas Disciplinares</h2>
-
-      <p>
-        O descumprimento deste Código poderá resultar em medidas proporcionais à
-        gravidade do fato, à intenção, aos danos causados e ao histórico do
-        envolvido, incluindo:
-      </p>
-
+      <p>O descumprimento deste Código poderá resultar em medidas proporcionais à gravidade do fato, à intenção, aos danos causados e ao histórico do envolvido, incluindo:</p>
       <ol>
         <li>orientação ou treinamento;</li>
         <li>advertência verbal ou escrita;</li>
@@ -820,14 +808,11 @@
         <li>comunicação às autoridades competentes;</li>
         <li>responsabilização civil ou criminal, quando aplicável.</li>
       </ol>
-
-      <p>
-        A apuração deverá respeitar a imparcialidade, a confidencialidade e o
-        direito de manifestação dos envolvidos, conforme a legislação aplicável.
-      </p>
+      <p>A apuração deverá respeitar a imparcialidade, a confidencialidade e o direito de manifestação dos envolvidos, conforme a legislação aplicável.</p>
     </section>
 
     <section class="card" id="responsabilidades">
+      <span class="doccode mono">FLX‑16</span>
       <h2>16. Responsabilidades</h2>
 
       <h3>Administração</h3>
@@ -859,107 +844,76 @@
     </section>
 
     <section class="card" id="vigencia">
+      <span class="doccode mono">FLX‑17</span>
       <h2>17. Vigência e Revisão</h2>
-
-      <p>
-        Este Código entra em vigor na data de sua aprovação e deverá ser revisado
-        periodicamente ou sempre que houver alteração relevante nas atividades,
-        na legislação, na estrutura ou nos riscos das empresas.
-      </p>
-
-      <p>
-        Campo Grande/MS, ____ de ____________________ de ______.
-      </p>
-
+      <p>Este Código entra em vigor na data de sua aprovação e deverá ser revisado periodicamente ou sempre que houver alteração relevante nas atividades, na legislação, na estrutura ou nos riscos das empresas.</p>
+      <p>Campo Grande/MS, ____ de ____________________ de ______.</p>
       <div class="assinatura">
-        <div class="linha">
-          Representante da Administração
-        </div>
-
-        <div class="linha">
-          Responsável pela Aprovação
-        </div>
+        <div class="linha">Representante da Administração</div>
+        <div class="linha">Responsável pela Aprovação</div>
       </div>
     </section>
 
     <section class="card" id="termo">
+      <span class="doccode mono">FLX‑18</span>
       <h2>Termo de Ciência e Compromisso</h2>
-
-      <p>
-        Declaro que recebi, li e compreendi o Código de Ética e Conduta da
-        Flexcampo, comprometendo-me a cumprir seus princípios, regras e
-        orientações, bem como a comunicar de boa-fé qualquer situação que possa
-        representar violação ao documento ou à legislação aplicável.
-      </p>
-
+      <p>Declaro que recebi, li e compreendi o Código de Ética e Conduta da Flexcampo, comprometendo-me a cumprir seus princípios, regras e orientações, bem como a comunicar de boa-fé qualquer situação que possa representar violação ao documento ou à legislação aplicável.</p>
       <br>
-
       <p><strong>Nome:</strong> ________________________________________________</p>
       <p><strong>CPF:</strong> _________________________________________________</p>
       <p><strong>Cargo/Função:</strong> ________________________________________</p>
       <p><strong>Empresa:</strong> _____________________________________________</p>
       <p><strong>Local e data:</strong> ________________________________________</p>
-
       <div class="assinatura">
-        <div class="linha">
-          Assinatura do colaborador
-        </div>
-
-        <div class="linha">
-          Assinatura da empresa
-        </div>
+        <div class="linha">Assinatura do colaborador</div>
+        <div class="linha">Assinatura da empresa</div>
       </div>
     </section>
 
   </main>
+</div>
 
-  <footer>
-    <p><strong>Flexcampo</strong></p>
-    <p>Código de Ética e Conduta</p>
-    <p>Integridade em cada decisão. Respeito em cada relação.</p>
-  </footer>
+<footer>
+  <strong>FLEXCAMPO</strong><br>
+  Código de Ética e Conduta · FLX‑COD‑001<br>
+  Integridade em cada decisão. Respeito em cada relação.
+</footer>
 
-  <script>
-    function buscarTexto() {
-      const termo = document.getElementById("busca").value
-        .trim()
-        .toLowerCase();
-
-      const secoes = document.querySelectorAll("main section.card");
-
-      secoes.forEach(secao => {
-        const texto = secao.innerText.toLowerCase();
-
-        if (!termo || texto.includes(termo)) {
-          secao.classList.remove("oculto");
-        } else {
-          secao.classList.add("oculto");
-        }
-      });
-    }
-
-    function expandirTudo() {
-      document.querySelectorAll("section.card").forEach(secao => {
-        secao.classList.remove("oculto");
-      });
-      document.getElementById("busca").value = "";
-    }
-
-    function recolherTudo() {
-      document.querySelectorAll("section.card").forEach((secao, index) => {
-        if (index > 0) {
-          secao.classList.add("oculto");
-        }
-      });
-    }
-
-    document.addEventListener("keydown", function(event) {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "p") {
-        event.preventDefault();
-        window.print();
-      }
+<script>
+  function buscarTexto(){
+    const termo = document.getElementById("busca").value.trim().toLowerCase();
+    document.querySelectorAll("main section.card").forEach(secao=>{
+      const texto = secao.innerText.toLowerCase();
+      secao.classList.toggle("oculto", !(!termo || texto.includes(termo)));
     });
-  </script>
+  }
+
+  function expandirTudo(){
+    document.querySelectorAll("section.card").forEach(s=>s.classList.remove("oculto"));
+    document.getElementById("busca").value = "";
+  }
+
+  function recolherTudo(){
+    document.querySelectorAll("section.card").forEach((s,i)=>{ if(i>0) s.classList.add("oculto"); });
+  }
+
+  document.addEventListener("keydown", e=>{
+    if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==="p"){ e.preventDefault(); window.print(); }
+  });
+
+  // scroll reveal
+  const cards = document.querySelectorAll(".card");
+  if("IntersectionObserver" in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add("in"); io.unobserve(entry.target); }
+      });
+    },{threshold:.08, rootMargin:"0px 0px -40px 0px"});
+    cards.forEach(c=>io.observe(c));
+  } else {
+    cards.forEach(c=>c.classList.add("in"));
+  }
+</script>
 
 </body>
 </html>
